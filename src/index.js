@@ -39,6 +39,8 @@ store.subscribe(() => {
 store.dispatch({type: 'INIT_APPLICATION'})
 
 themeBtn.addEventListener('click', ()=>{
-  store.dispatch(changeTheme())
-  // document.body.classList.toggle('dark')
+  const newTheme = document.body.classList.contains('light')
+    ? 'dark'
+    : 'light'
+  store.dispatch(changeTheme(newTheme))
 })
